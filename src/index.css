@@ -16,21 +16,25 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
+  min-width: 320px;
+  overflow-x: hidden;
+  word-wrap: break-word;
   background-color: var(--background-1);
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%201024%22%20width%3D%221024%22%20height%3D%221024%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20circle%20%7B%20fill%3A%20rgba(0,0,0,0.039)%3B%20%7D%20%3C%2Fstyle%3E%20%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%2210.01%25%22%20%2F%3E%20%3Ccircle%20cx%3D%22768%22%20cy%3D%22768%22%20r%3D%2210.01%25%22%20%2F%3E%3C%2Fsvg%3E"), radial-gradient(94% 32% at 100% 78%, var(--background-2) 45%, var(--background-1) 100%);
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%201024%22%20width%3D%221024%22%20height%3D%221024%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20circle%20%7B%20fill%3A%20rgba(0,0,0,0.039)%3B%20%7D%20%3C%2Fstyle%3E%20%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%2210.01%25%22%20%2F%3E%20%3Ccircle%20cx%3D%22768%22%20cy%3D%22768%22%20r%3D%2210.01%25%22%20%2F%3E%3C%2Fsvg%3E");
   background-size: 150px, auto;
   background-position: center, 0% 0%;
   background-repeat: repeat, repeat;
-  animation: scrollBg 5s linear infinite;
+  animation: scrollBg 40s linear infinite;
 }
 
 @keyframes scrollBg {
   0% {
-    background-position: 100% 0;
+    background-position: 100% 100%;
   }
 
   100% {
-    background-position: 100% 100%;
+    background-position: 100% 0%;
   }
 }
 
@@ -42,7 +46,6 @@ body {
   max-width: 100%;
   max-height: 100%;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,6 +59,6 @@ body {
   }
 
   body {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%201024%22%20width%3D%221024%22%20height%3D%221024%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20circle%20%7B%20fill%3A%20rgb(13,17,23)%3B%20%7D%20%3C%2Fstyle%3E%20%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%2210.01%25%22%20%2F%3E%20%3Ccircle%20cx%3D%22768%22%20cy%3D%22768%22%20r%3D%2210.01%25%22%20%2F%3E%3C%2Fsvg%3E"), radial-gradient(94% 32% at 100% 78%, var(--background-2) 45%, var(--background-1) 100%);
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%201024%22%20width%3D%221024%22%20height%3D%221024%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20circle%20%7B%20fill%3A%20rgb(13,17,23)%3B%20%7D%20%3C%2Fstyle%3E%20%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%2210.01%25%22%20%2F%3E%20%3Ccircle%20cx%3D%22768%22%20cy%3D%22768%22%20r%3D%2210.01%25%22%20%2F%3E%3C%2Fsvg%3E");
   }
 }
