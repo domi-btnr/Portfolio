@@ -1,0 +1,92 @@
+.Modal {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  border-color: rgba(0, 0, 0, 0.075);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 1.75rem;
+  padding: 4rem;
+
+  .ContentLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    padding-right: 20px;
+
+    img {
+      width: 7rem;
+      border-radius: 100%;
+    }
+
+    h1 {
+      font-size: 5.5em;
+      line-height: 1;
+      font-weight: 500;
+      margin-top: 1.375rem;
+      margin-bottom: 1.375rem;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1.125em;
+      font-weight: 400;
+      letter-spacing: 0.025rem;
+      line-height: 1.875;
+      margin-top: 1.375rem;
+      width: calc(100% + 0.025rem);
+    }
+  }
+
+  .ContentRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+
+    ul {
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      justify-content: center;
+      letter-spacing: 0;
+      list-style: none;
+      padding: 20px;
+      width: 20vw;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .Modal {
+    grid-template-columns: auto;
+    padding: 2rem;
+  }
+
+  .ContentLeft,
+  .ContentRight {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .ContentLeft {
+    order: 1;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ContentRight {
+    order: 2;
+    padding-left: 0 !important;
+    ul {
+      width: 50vw !important;
+    }
+  }
+}
