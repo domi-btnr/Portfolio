@@ -18,7 +18,7 @@ const App = () => {
             <Button HREF="https://github.com/HypedDomi" Icon={faGithub} Label="GitHub" />
             <Button HREF="https://discord.com/users/354191516979429376" Icon={faDiscord} Label="Discord" />
             <Button HREF="https://open.spotify.com/user/w3n4nfntxo820v80ti441uplr" Icon={faSpotify} Label="Spotify" />
-            <Button HREF="https://paypal.me/dominik1711" Icon={faPaypal} Label="PayPal" />
+            <Button HREF="https://paypal.me/domibtnr" Icon={faPaypal} Label="PayPal" />
             <Button HREF="mailto:dominik.buettner1711@gmail.com" Icon={faEnvelope} Label="E-Mail" />
           </ul>
         </div>
