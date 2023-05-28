@@ -25,8 +25,10 @@ const App = () => {
             <Button href="mailto:me@domi-btnr.dev" icon={faEnvelope} label="E-Mail" />
           </ul>
         </div>
-        <img class={Styles.ScrollIndicator} src={mouseScrollImg} />
-        <div className={Styles.ContentBottom}>
+        <a href="#about" className={Styles.ScrollIndicator}>
+          <img src={mouseScrollImg} />
+        </a>
+        <div id="about" className={Styles.ContentBottom}>
           <p>
             Hello, I'm Dominik, a {<Age date={"11/17/2003"} />} old hobby programmer and student from Germany.
             I have always preferred to learn programming languages through doing.

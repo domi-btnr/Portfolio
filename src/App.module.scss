@@ -1,6 +1,6 @@
 .Modal {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content min-content;
   align-items: start;
   justify-content: center;
@@ -22,8 +22,17 @@
     display: none;
   }
 
+  .ContentLeft,
+  .ContentRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .ContentLeft {
     padding-right: 20px;
+    align-items: flex-start;
 
     img {
       width: 7rem;
@@ -31,11 +40,11 @@
     }
 
     h1 {
-      font-size: 5.5em;
+      font-size: calc(2.5rem + 2.5vw);
       line-height: 1;
       font-weight: 500;
-      margin-top: 1.375rem;
-      margin-bottom: 1.375rem;
+      margin: 1.375rem 0;
+      margin-left: -5px;
     }
 
     p {
@@ -62,15 +71,19 @@
       letter-spacing: 0;
       list-style: none;
       padding: 20px;
-      width: 20vw;
+      width: 100%;
     }
   }
 
   .ScrollIndicator {
-    width: 75px;
     margin: 0 auto;
-    margin-top: -2rem;
+    margin-top: -3rem;
     grid-column: 1 / span 2;
+    animation: scrollIndicator 1.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+
+    img {
+      width: 75px;
+    }
   }
 
   .ContentBottom {
@@ -79,6 +92,23 @@
     text-align: justify;
     grid-column: 1 / span 2;
     margin-bottom: -2rem;
+
+    p {
+      font-size: 1.125em;
+      font-weight: 400;
+      letter-spacing: 0.025rem;
+      line-height: 1.875;
+    }
+  }
+}
+
+@keyframes scrollIndicator {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(1rem);
   }
 }
 
@@ -100,12 +130,18 @@
 
   .ContentLeft {
     order: 1;
-    align-items: center;
     justify-content: center;
+    align-items: center !important;
+    padding-right: unset !important;
+
+    h1 {
+      margin-left: unset !important;
+    }
   }
 
   .ContentRight {
     order: 2;
+    padding-left: unset !important;
 
     ul {
       width: 70vw !important;

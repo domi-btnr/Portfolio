@@ -13,6 +13,7 @@
 * {
   color: var(--text-primary);
   font-family: "DM Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
