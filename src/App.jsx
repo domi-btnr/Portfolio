@@ -1,13 +1,18 @@
 import { faGithub, faDiscord, faSpotify, faPaypal } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { inject } from '@vercel/analytics';
 
 import Age from "./components/Age";
 import Button from "./components/Button";
 import Styles from "./App.module.scss";
 
 import mouseScrollImg from "./assets/mouse-scroll.png"
+import { onMount } from "solid-js";
 
 const App = () => {
+
+  onMount(() => inject());
+
   return (
     <>
       <div className={Styles.Modal}>
