@@ -34,7 +34,7 @@ const App = () => {
             I have always preferred to learn programming languages through doing.
             I have developed my skill in a number of languages through real-world experience.
             At the age of 14, I started creating Minecraft plugins, which marked the beginning of my programming hobby.
-            My main areas of interest throughout the years have been Python and JavaScript/TypeScript.
+            My main areas of interest throughout the years have been <span>Python</span> and <span>JavaScript/TypeScript</span>.
           </p>
         </div>
       </div>

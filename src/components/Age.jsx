@@ -1,4 +1,5 @@
 import { createSignal, createEffect } from "solid-js";
+import Tooltip from "./Tooltip";
 
 const getAge = (birthDate) => {
     const currentDate = new Date();
@@ -25,18 +26,20 @@ const Age = ({ date }) => {
     });
 
     const toggleUnits = () => {
-        const units = Object.keys(age());
+        const units = ["months", "days"];
         const currentIndex = units.indexOf(toggle());
         const nextIndex = (currentIndex + 1) % units.length;
         setToggle(units[nextIndex]);
     };
-
-    const [toggle, setToggle] = createSignal("years");
+    
+    const [toggle, setToggle] = createSignal("months");
 
     return (
-        <span onClick={toggleUnits}>
-            {age()[toggle()]} {toggle()}
-        </span>
+        <Tooltip text={() => `${age()[toggle()]} ${toggle()}`}>
+            <span onClick={toggleUnits} style={{ cursor: "pointer" }}>
+                {`${age()["years"]} years`}
+            </span>
+        </Tooltip>
     );
 };
 

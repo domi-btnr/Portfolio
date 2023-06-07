@@ -17,7 +17,6 @@
 
   // Hide Scrollbar
   scrollbar-width: none;
-
   &::-webkit-scrollbar {
     display: none;
   }
@@ -35,7 +34,7 @@
     align-items: flex-start;
 
     img {
-      width: 7rem;
+      width: 8rem;
       border-radius: 100%;
     }
 
@@ -98,6 +97,13 @@
       font-weight: 400;
       letter-spacing: 0.025rem;
       line-height: 1.875;
+
+      span {
+        font-size: 1em;
+        border-radius: 8px;
+        background-color: var(--background-1);
+        padding: 0.15rem 0.5rem;
+      }
     }
   }
 }
