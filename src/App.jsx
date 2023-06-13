@@ -19,7 +19,7 @@ const App = () => {
         <div className={Styles.ContentLeft}>
           <img src="https://avatars.githubusercontent.com/u/50876016?v=4" />
           <h1>Dominik</h1>
-          <p>Hobby programmer and student</p>
+          <p>Hobby programmer</p>
         </div>
         <div className={Styles.ContentRight}>
           <ul>
@@ -35,7 +35,7 @@ const App = () => {
         </a>
         <div id="about" className={Styles.ContentBottom}>
           <p>
-            Hello, I'm Dominik, a {<Age date={"11/17/2003"} />} old hobby programmer and student from Germany.
+            Hello, I'm Dominik, a {<Age date={"11/17/2003"} />} old hobby programmer from Germany.
             I have always preferred to learn programming languages through doing.
             I have developed my skill in a number of languages through real-world experience.
             At the age of 14, I started creating Minecraft plugins, which marked the beginning of my programming hobby.
