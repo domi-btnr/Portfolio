@@ -17,7 +17,7 @@ const App = () => {
     <>
       <div className={Styles.Modal}>
         <div className={Styles.ContentLeft}>
-          <img src="https://avatars.githubusercontent.com/u/50876016?v=4" />
+          <img src="https://avatars.githubusercontent.com/u/50876016?v=4" alt="GitHub Profile Photo" />
           <h1>Dominik</h1>
           <p>Hobby programmer</p>
         </div>
@@ -31,7 +31,7 @@ const App = () => {
           </ul>
         </div>
         <a href="#about" className={Styles.ScrollIndicator}>
-          <img src={mouseScrollImg} />
+          <img src={mouseScrollImg} alt="Scroll to About" />
         </a>
         <div id="about" className={Styles.ContentBottom}>
           <p>
