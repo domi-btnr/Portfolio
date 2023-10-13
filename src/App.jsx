@@ -23,7 +23,7 @@ const App = () => {
         </div>
         <div className={Styles.ContentRight}>
           <ul>
-            <Button href="https://github.com/HypedDomi" icon={faGithub} label="GitHub" />
+            <Button href="https://github.com/domi-btnr" icon={faGithub} label="GitHub" />
             <Button href="https://discord.com/users/354191516979429376" icon={faDiscord} label="Discord" />
             <Button href="https://open.spotify.com/user/w3n4nfntxo820v80ti441uplr" icon={faSpotify} label="Spotify" />
             <Button href="https://paypal.me/domibtnr" icon={faPaypal} label="PayPal" />
