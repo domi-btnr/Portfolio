@@ -15,6 +15,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@vercel/analytics": "^1.0.1",
+    "@vercel/speed-insights": "^1.0.10",
     "solid-fa": "^0.2.0",
     "solid-js": "^1.7.5"
   }

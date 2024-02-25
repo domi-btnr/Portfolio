@@ -1,6 +1,7 @@
 import { faGithub, faDiscord, faSpotify, faPaypal } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { inject } from '@vercel/analytics';
+import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 
 import Age from "./components/Age";
 import Button from "./components/Button";
@@ -11,7 +12,10 @@ import { onMount } from "solid-js";
 
 const App = () => {
 
-  onMount(() => inject());
+  onMount(() => {
+    inject();
+    injectSpeedInsights();
+  });
 
   return (
     <>
