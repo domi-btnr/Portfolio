@@ -22,7 +22,7 @@ const App = () => {
             <HighlightCursor />
             <header class={Style.header}>
                 <h1>Dominik Büttner</h1>
-                <h2>Self-thaught Developer</h2>
+                <h2>Self-taught Developer</h2>
             </header>
             <main class={Style.about}>
                 <p>

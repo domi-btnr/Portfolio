@@ -15,7 +15,8 @@
 }
 
 body {
-  padding: 5vh 5vw;
+  margin: 5vh 5vw;
+  height: 90vh;
   background-color: var(--background-3);
 }
 
@@ -27,5 +28,6 @@ body {
   "socials projects";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr auto;
-  gap: min(2.5vw, 2.5vh);
+  gap: 2em;
+  height: 100%;
 }
