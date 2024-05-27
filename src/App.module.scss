@@ -23,7 +23,7 @@
     span {
       font-weight: 500;
       border-radius: 8px;
-      background-color: var(--background-2);
+      background-color: var(--background-1);
       padding: 0.15rem 0.25rem;
     }
   }
@@ -39,4 +39,12 @@
     padding: 0;
     gap: 1rem;
   }
+}
+
+.projects {
+  grid-area: projects;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
 }
