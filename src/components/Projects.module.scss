@@ -1,4 +1,91 @@
 .projectList {
     flex: 1;
-    overflow-y: auto; 
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    &:has(> .errorWrapper) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .errorWrapper {
+        text-align: center;
+        
+        svg {
+            font-size: 10vh;
+            margin-bottom: 1rem;
+        }
+
+        span {
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+.projectTile {
+    display: grid;
+    padding: 10px;
+    grid-template-areas:
+        "name github"
+        "description github"
+        "stats github";
+    grid-template-columns: 3fr .5fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    align-items: center;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: all 0.4s ease;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    &:hover {
+        background-color: var(--background-2);
+    }
+
+    h3 {
+        grid-area: name;
+        margin: 0;
+    }
+
+    p {
+        grid-area: description;
+        margin: 0;
+    }
+
+    .stats {
+        grid-area: stats;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        a, span {
+            padding: 0.25rem 0.5rem;
+            border-radius: 8px;
+            background-color: var(--background-1);
+            text-decoration: none;
+
+            svg {
+                margin-right: 0.25rem;
+            }
+        }
+    }
+
+    li {
+        grid-area: github;
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
 }

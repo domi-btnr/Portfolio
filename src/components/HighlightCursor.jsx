@@ -1,4 +1,4 @@
-import { createEffect, createSignal } from "solid-js";
+import { createEffect, createSignal, onCleanup } from "solid-js";
 
 import Style from "./HighlightCursor.module.scss";
 
@@ -9,7 +9,7 @@ const HighlightCursor = () => {
         const handleMouseMove = e => setCursorPosition({ x: `${e.clientX}px`, y: `${e.clientY}px` });
         window.addEventListener("mousemove", handleMouseMove);
 
-        return () => window.removeEventListener("mousemove", handleMouseMove);
+        onCleanup(() => window.removeEventListener("mousemove", handleMouseMove));
     });
 
     return (
