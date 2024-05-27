@@ -1,0 +1,14 @@
+.socialButton {
+    a {
+        margin-left: 10px;
+        svg {
+            height: 2.5rem !important;
+            transition: transform 0.25s ease;
+            &:hover,
+            &:active,
+            &:focus {
+                transform: scale(1.15);
+            }
+        }
+    }
+}

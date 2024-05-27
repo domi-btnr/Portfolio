@@ -1,7 +1,8 @@
-import { createSignal, createEffect } from "solid-js";
+import { createEffect, createSignal } from "solid-js";
+
 import Tooltip from "./Tooltip";
 
-const getAge = (birthDate) => {
+const getAge = birthDate => {
     const currentDate = new Date();
     const ageDiff = Math.abs(currentDate - birthDate);
     const yearsDiff = Math.floor(ageDiff / (1000 * 60 * 60 * 24 * 365));
@@ -15,12 +16,13 @@ const getAge = (birthDate) => {
     };
 };
 
-const Age = ({ date }) => {
-    const [birthDate] = createSignal(new Date(date));
-    const [age, setAge] = createSignal(getAge(birthDate()));
+const Age = props => {
+    // eslint-disable-next-line solid/reactivity
+    const birthDate = new Date(props.date);
+    const [age, setAge] = createSignal(getAge(birthDate));
 
     createEffect(() => {
-        const interval = setInterval(() => setAge(getAge(birthDate())), 1000);
+        const interval = setInterval(() => setAge(getAge(birthDate)), 1000);
 
         return () => clearInterval(interval);
     });
@@ -31,7 +33,7 @@ const Age = ({ date }) => {
         const nextIndex = (currentIndex + 1) % units.length;
         setToggle(units[nextIndex]);
     };
-    
+
     const [toggle, setToggle] = createSignal("months");
 
     return (

@@ -1,10 +1,10 @@
 import Styles from "./Tooltip.module.scss";
 
-const Tooltip = ({ children, text }) => {
+const Tooltip = props => {
     return (
-        <div className={Styles.TooltipWrapper}>
-            <span className={Styles.TooltipText}>{text()}</span>
-            {children}
+        <div class={Styles.tooltipWrapper}>
+            <span class={Styles.tooltipText}>{props.text()}</span>
+            {props.children}
         </div>
     );
 };
