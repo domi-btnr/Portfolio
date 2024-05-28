@@ -10,8 +10,15 @@ const ProjectTile = props => {
     const retryTimeout = null;
 
     const fetchLanguages = async url => {
+        const now = Date.now();
+        const CACHE_KEY = `languages_${props.name}`;
+        const CACHE = JSON.parse(localStorage.getItem(CACHE_KEY) ?? `[${props.language}]`);
+
+        if (CACHE && CACHE.expiry > now)
+            return CACHE.data;
+
         const response = await fetch(url);
-        const data = await response.json();
+        let data = await response.json();
 
         if (!response.ok) {
             const resetTimestamp = response.headers.get("X-Ratelimit-Reset");
@@ -26,8 +33,9 @@ const ProjectTile = props => {
             } else console.error(errorMessage);
             throw new Error(errorMessage);
         }
-
-        return Object.keys(data).slice(0, 4);
+        data = Object.keys(data).slice(0, 4);
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ data, expiry: now + 30 * 60 * 1000 }));
+        return data;
     };
 
     // eslint-disable-next-line solid/reactivity
@@ -70,8 +78,15 @@ const Projects = () => {
     let retryTimeout = null;
 
     const fetchProjects = async () => {
+        const now = Date.now();
+        const CACHE_KEY = "projects";
+        const CACHE = JSON.parse(localStorage.getItem(CACHE_KEY) ?? "[]");
+
+        if (CACHE && CACHE.expiry > now)
+            return CACHE.data;
+
         const response = await fetch(`https://api.github.com/users/${GH_USER}/repos`);
-        const data = await response.json();
+        let data = await response.json();
 
         if (!response.ok) {
             const resetTimestamp = response.headers.get("X-Ratelimit-Reset");
@@ -90,8 +105,10 @@ const Projects = () => {
 
         if (!Array.isArray(data)) throw new TypeError(`Expected an array but got ${typeof data}`);
 
-        return data.filter(repo => !repo.fork && !repo.archived && repo.name !== GH_USER)
+        data = data.filter(repo => !repo.fork && !repo.archived && repo.name !== GH_USER)
             .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ data, expiry: now + 30 * 60 * 1000 }));
+        return data;
     };
 
     const [projects, { refetch }] = createResource(fetchProjects, { initialValue: [] });
@@ -100,6 +117,11 @@ const Projects = () => {
     return (
         <div class={Style.projectList}>
             <Switch>
+                <Match when={projects()}>
+                    <For each={projects()}>
+                        {project => <ProjectTile {...project} />}
+                    </For>
+                </Match>
                 <Match when={projects.loading}>
                     <div class={Style.loadingWrapper}>
                         <Fa icon={faArrowsRotate} />
@@ -112,11 +134,6 @@ const Projects = () => {
                         <span>Error fetching projects:</span>
                         <p>{projects.error.message}</p>
                     </div>
-                </Match>
-                <Match when={projects()}>
-                    <For each={projects()}>
-                        {project => <ProjectTile {...project} />}
-                    </For>
                 </Match>
             </Switch>
         </div>
