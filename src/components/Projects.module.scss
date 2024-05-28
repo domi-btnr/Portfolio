@@ -2,16 +2,18 @@
     flex: 1;
     overflow-y: auto;
     overflow-x: hidden;
-    
+
+    &:has(> .loadingWrapper),
     &:has(> .errorWrapper) {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
+    .loadingWrapper,
     .errorWrapper {
         text-align: center;
-        
+
         svg {
             font-size: 10vh;
             margin-bottom: 1rem;
@@ -28,6 +30,14 @@
             font-size: 1rem;
             margin-top: 0.5rem;
         }
+    }
+
+    .loadingWrapper svg {
+        animation: loadingSpinner 4s linear infinite;
+    }
+
+    @keyframes loadingSpinner {
+        100% { transform: rotate(360deg); }
     }
 }
 
