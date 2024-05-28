@@ -12,6 +12,14 @@
   color: var(--text-primary);
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--background-1);
+    border-radius: 10px;
+  }
 }
 
 body {
@@ -31,12 +39,4 @@ body {
   grid-template-rows: auto;
   align-items: center;
   height: 100%;
-
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--background-1);
-    border-radius: 10px;
-  }
 }

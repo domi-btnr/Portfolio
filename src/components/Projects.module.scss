@@ -1,8 +1,10 @@
 .projectList {
     flex: 1;
+    cursor: default;
     overflow-y: auto;
     overflow-x: hidden;
 
+    &:has(> .emptyProjectsWrapper),
     &:has(> .loadingWrapper),
     &:has(> .errorWrapper) {
         display: flex;
@@ -10,12 +12,13 @@
         align-items: center;
     }
 
+    .emptyProjectsWrapper,
     .loadingWrapper,
     .errorWrapper {
         text-align: center;
 
         svg {
-            font-size: 10vh;
+            height: 5rem !important;
             margin-bottom: 1rem;
         }
 

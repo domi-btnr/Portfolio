@@ -1,5 +1,5 @@
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faArrowsRotate, faCodeFork, faStar, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faArrowsRotate, faCodeFork, faFileCircleQuestion, faStar, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import Fa from "solid-fa";
 import { createResource, For, Match, onCleanup, Show, Switch } from "solid-js";
 
@@ -118,9 +118,16 @@ const Projects = () => {
         <div class={Style.projectList}>
             <Switch>
                 <Match when={projects()}>
-                    <For each={projects()}>
-                        {project => <ProjectTile {...project} />}
-                    </For>
+                    <Show when={!projects().length} fallback={
+                        <For each={projects()}>
+                            {project => <ProjectTile {...project} />}
+                        </For>
+                    }>
+                        <div class={Style.emptyProjectsWrapper}>
+                            <Fa icon={faFileCircleQuestion} />
+                            <span>No projects found</span>
+                        </div>
+                    </Show>
                 </Match>
                 <Match when={projects.loading}>
                     <div class={Style.loadingWrapper}>
