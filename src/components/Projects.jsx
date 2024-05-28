@@ -31,7 +31,7 @@ const ProjectTile = props => {
     };
 
     // eslint-disable-next-line solid/reactivity
-    const [languages, { refetch }] = createResource(fetchLanguages, { initialValue: [props.language] });
+    const [languages, { refetch }] = createResource(() => fetchLanguages(props.languages_url), { initialValue: [props.language] });
     onCleanup(() => clearTimeout(retryTimeout));
 
     return (
