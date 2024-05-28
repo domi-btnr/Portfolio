@@ -12,7 +12,7 @@ const ProjectTile = props => {
     const fetchLanguages = async url => {
         const now = Date.now();
         const CACHE_KEY = `languages_${props.name}`;
-        const CACHE = JSON.parse(localStorage.getItem(CACHE_KEY) ?? `[${props.language}]`);
+        const CACHE = JSON.parse(localStorage.getItem(CACHE_KEY) ?? `["${props.language}"]`);
 
         if (CACHE && CACHE.expiry > now)
             return CACHE.data;
