@@ -1,0 +1,21 @@
+.socialButton {
+    a {
+        margin-left: 10px;
+        svg {
+            height: 2.5rem !important;
+            transition: all 0.25s ease;
+            path {
+                fill: var(--text-secondary);
+            }
+            &:hover,
+            &:active,
+            &:focus {
+                color: var(--text-primary);
+                transform: scale(1.15);
+                path {
+                    fill: var(--text-primary);
+                }
+            }
+        }
+    }
+}

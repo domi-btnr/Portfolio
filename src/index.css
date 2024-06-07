@@ -1,66 +1,57 @@
-@import url("https://fonts.googleapis.com/css?display=swap&family=DM+Sans:500,500italic,400,400italic");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --primary: #FFF;
-  --background-1: hsl(0, 0%, 95%);
-  --background-2: #DEDEDE;
-  --button: #E8F5F7;
-  --text-primary: rgb(83, 97, 99);
-  --text-secondary: rgba(83, 97, 99, 0.6);
-  --backgroundSize: 150px;
+  --background-1: #1e1e2e;
+  --background-2: #181825;
+  --background-3: #11111b;
+  --text-primary: #cdd6f4;
+  --text-secondary: #a6adc8;
 }
 
 * {
   color: var(--text-primary);
-  font-family: "DM Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--background-1);
+    border-radius: 10px;
+  }
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  min-width: 320px;
-  overflow-x: hidden;
-  word-wrap: break-word;
-  background-color: var(--background-1);
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%201024%22%20width%3D%221024%22%20height%3D%221024%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20circle%20%7B%20fill%3A%20rgba(0,0,0,0.039)%3B%20%7D%20%3C%2Fstyle%3E%20%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%2210.01%25%22%20%2F%3E%20%3Ccircle%20cx%3D%22768%22%20cy%3D%22768%22%20r%3D%2210.01%25%22%20%2F%3E%3C%2Fsvg%3E");
-  background-size: var(--backgroundSize), auto;
-  background-position: center, 0% 0%;
-  background-repeat: repeat, repeat;
-  animation: scrollBg 10s linear infinite;
-}
-
-@keyframes scrollBg {
-  from {
-    background-position: 0 var(--backgroundSize);
-  }
-
-  to {
-    background-position: 0 0;
-  }
+  margin: 5vh 5vw;
+  height: 90vh;
+  background-color: var(--background-3);
 }
 
 #root {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 100%;
-  max-height: 100%;
-  box-sizing: border-box;
+  display: grid;
+  gap: 0 2em;
+  grid-template-areas:
+    "header projects"
+    "about projects"
+    "socials projects";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: #0d1117;
-    --background-1: #010409;
-    --background-2: #7d8590;
-    --button: #30363d;
-    --text-primary: #eeeeee;
-    --text-secondary: rgba(238, 238, 238, 0.6);
+@media (max-width: 768px) {
+  #root {
+    grid-template-areas:
+      "header"
+      "about"
+      "socials"
+      "projects";
+    grid-template-columns: 1fr;
   }
 
   body {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%201024%22%20width%3D%221024%22%20height%3D%221024%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20circle%20%7B%20fill%3A%20rgb(13,17,23)%3B%20%7D%20%3C%2Fstyle%3E%20%3Ccircle%20cx%3D%22256%22%20cy%3D%22256%22%20r%3D%2210.01%25%22%20%2F%3E%20%3Ccircle%20cx%3D%22768%22%20cy%3D%22768%22%20r%3D%2210.01%25%22%20%2F%3E%3C%2Fsvg%3E");
+    margin: 2.5vh 2.5vw;
   }
 }

@@ -1,0 +1,134 @@
+.projectList {
+    flex: 1;
+    cursor: default;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &:has(> .emptyProjectsWrapper),
+    &:has(> .loadingWrapper),
+    &:has(> .errorWrapper) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .emptyProjectsWrapper,
+    .loadingWrapper,
+    .errorWrapper {
+        text-align: center;
+
+        svg {
+            height: 5rem !important;
+            margin-bottom: 1rem;
+        }
+
+        span {
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+    }
+
+    .loadingWrapper svg {
+        animation: loadingSpinner 4s linear infinite;
+    }
+
+    @keyframes loadingSpinner {
+        100% { transform: rotate(360deg); }
+    }
+}
+
+.projectTile {
+    display: grid;
+    padding: 10px;
+    grid-template-areas:
+        "name github"
+        "description github"
+        "languages-and-stats github";
+    grid-template-columns: 3fr .5fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    align-items: center;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: all 0.4s ease;
+    width: auto;
+    max-width: 100%;
+    
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    &:hover {
+        background-color: var(--background-2);
+    }
+
+    h3 {
+        grid-area: name;
+        margin: 0;
+    }
+
+    p {
+        grid-area: description;
+        margin: 0;
+    }
+
+    $GAP: 5px;
+    .languages-and-stats {
+        grid-area: languages-and-stats;
+        display: flex;
+        align-items: center;
+        gap: $GAP;
+        
+        .dot { margin: 0 $GAP / 2; }
+        .languages, .stats {
+            display: flex;
+            gap: $GAP;
+
+            a, span {
+                display: flex;
+                align-items: center;
+                padding: 0.25rem 0.5rem;
+                border-radius: 8px;
+                background-color: var(--background-1);
+                text-decoration: none;
+
+                svg {
+                    margin-right: 0.25rem;
+                }
+            }
+        }
+    }
+
+    li {
+        grid-area: github;
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-areas:
+            "name github"
+            "description github"
+            "languages-and-stats github";
+        gap: $GAP * 2;
+
+        .languages-and-stats {
+            flex-direction: column;
+            align-items: flex-start;
+            
+            .dot { display: none; }
+            .languages, .stats {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

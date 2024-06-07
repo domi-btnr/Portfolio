@@ -1,19 +1,17 @@
-$tooltip-width: 120px;
-
-.TooltipWrapper {
+.tooltipWrapper {
   position: relative;
   display: inline-block;
 
-  &:hover .TooltipText {
+  &:hover .tooltipText {
     opacity: 1;
     pointer-events: auto;
   }
 
-  .TooltipText {
+  .tooltipText {
     z-index: 1;
     opacity: 0;
     position: absolute;
-    width: $tooltip-width;
+    width: max-content;
     left: 50%;
     bottom: 125%;
     transform: translateX(-50%);
