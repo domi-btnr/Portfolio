@@ -48,24 +48,28 @@ const ProjectTile = props => {
             <Show when={props.description}>
                 <p>{props.description}</p>
             </Show>
-            <div class={Style.stats}>
-                <For each={languages()}>
-                    {language => <span>{language}</span>}
-                </For>
+            <div class={Style["languages-and-stats"]}>
+                <div class={Style.languages}>
+                    <For each={languages()}>
+                        {language => <span>{language}</span>}
+                    </For>
+                </div>
                 <Show when={props.stargazers_count || props.forks_count}>
-                    <div>•</div>
-                    <Show when={props.stargazers_count}>
-                        <a href={`${props.html_url}/stargazers`} target="_blank" rel="noopener noreferrer">
-                            <Fa icon={faStar} />
-                            {`${props.stargazers_count} ${props.stargazers_count > 1 ? "Stars" : "Star"}`}
-                        </a>
-                    </Show>
-                    <Show when={props.forks_count}>
-                        <a href={`${props.html_url}/forks`} target="_blank" rel="noopener noreferrer">
-                            <Fa icon={faCodeFork} />
-                            {`${props.forks_count} ${props.forks_count > 1 ? "Forks" : "Fork"}`}
-                        </a>
-                    </Show>
+                    <div class={Style.dot}>•</div>
+                    <div class={Style.stats}>
+                        <Show when={props.stargazers_count}>
+                            <a href={`${props.html_url}/stargazers`} target="_blank" rel="noopener noreferrer">
+                                <Fa icon={faStar} />
+                                {`${props.stargazers_count} ${props.stargazers_count > 1 ? "Stars" : "Star"}`}
+                            </a>
+                        </Show>
+                        <Show when={props.forks_count}>
+                            <a href={`${props.html_url}/forks`} target="_blank" rel="noopener noreferrer">
+                                <Fa icon={faCodeFork} />
+                                {`${props.forks_count} ${props.forks_count > 1 ? "Forks" : "Fork"}`}
+                            </a>
+                        </Show>
+                    </div>
                 </Show>
             </div>
             <SocialButton href={props.html_url} icon={faGithub} label="View on GitHub" />

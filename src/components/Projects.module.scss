@@ -50,7 +50,7 @@
     grid-template-areas:
         "name github"
         "description github"
-        "stats github";
+        "languages-and-stats github";
     grid-template-columns: 3fr .5fr;
     grid-template-rows: auto;
     gap: 10px;
@@ -58,7 +58,9 @@
     border-radius: 8px;
     background-color: transparent;
     transition: all 0.4s ease;
-
+    width: auto;
+    max-width: 100%;
+    
     &:not(:last-child) {
         margin-bottom: 10px;
     }
@@ -77,20 +79,29 @@
         margin: 0;
     }
 
-    .stats {
-        grid-area: stats;
+    $GAP: 5px;
+    .languages-and-stats {
+        grid-area: languages-and-stats;
         display: flex;
-        gap: 5px;
         align-items: center;
+        gap: $GAP;
+        
+        .dot { margin: 0 $GAP / 2; }
+        .languages, .stats {
+            display: flex;
+            gap: $GAP;
 
-        a, span {
-            padding: 0.25rem 0.5rem;
-            border-radius: 8px;
-            background-color: var(--background-1);
-            text-decoration: none;
+            a, span {
+                display: flex;
+                align-items: center;
+                padding: 0.25rem 0.5rem;
+                border-radius: 8px;
+                background-color: var(--background-1);
+                text-decoration: none;
 
-            svg {
-                margin-right: 0.25rem;
+                svg {
+                    margin-right: 0.25rem;
+                }
             }
         }
     }
@@ -100,5 +111,24 @@
         display: flex;
         list-style: none;
         align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-areas:
+            "name github"
+            "description github"
+            "languages-and-stats github";
+        gap: $GAP * 2;
+
+        .languages-and-stats {
+            flex-direction: column;
+            align-items: flex-start;
+            
+            .dot { display: none; }
+            .languages, .stats {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
     }
 }

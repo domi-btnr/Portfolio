@@ -40,3 +40,18 @@ body {
   align-items: center;
   height: 100%;
 }
+
+@media (max-width: 768px) {
+  #root {
+    grid-template-areas:
+      "header"
+      "about"
+      "socials"
+      "projects";
+    grid-template-columns: 1fr;
+  }
+
+  body {
+    margin: 2.5vh 2.5vw;
+  }
+}
