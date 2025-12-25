@@ -1,0 +1,55 @@
+.navbarRoot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 50;
+  height: 60px;
+
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease;
+}
+
+.navbarRootScrolled {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.navbarContainer {
+  max-width: 1280px;
+  height: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+}
+
+.navbarContainer .navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #6b7280;
+  text-decoration: none;
+
+  transition: color 150ms ease;
+
+  &:hover {
+    color: #111827;
+  }
+}
