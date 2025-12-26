@@ -1,0 +1,15 @@
+.themeToggleButton {
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--label-active);
+  transition: color 0.2s ease-in-out;
+  &:hover {
+    color: var(--accent);
+  }
+}

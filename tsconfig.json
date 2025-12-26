@@ -18,8 +18,9 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@constants": ["src/constants/index"],
+      "@contexts/*": ["src/contexts/*"],
       "@pages/*": ["src/pages/*"],
-      "~/*": ["src/*"],
+      "~/*": ["src/*"]
     }
   }
 }

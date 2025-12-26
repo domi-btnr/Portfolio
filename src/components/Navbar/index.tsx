@@ -1,14 +1,19 @@
-import { useEffect, useState } from "react";
+import "./style.css";
 
-import style from "./index.module.css";
+import ThemeToggle from "@components/ThemeToggle";
+import clsx from "clsx";
+import { useEffect, useState } from "react";
+import { Trans } from "react-i18next";
+import { Link, useLocation } from "react-router";
 
 const NAV_LINKS = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
+  { name: "home", href: "/" },
+  { name: "about", href: "/about" },
+  { name: "projects", href: "/projects" },
 ];
 
 export default function Navbar() {
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -20,17 +25,18 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`${style.navbarRoot} ${scrolled ? style.navbarRootScrolled : ""}`}>
-      <div className={style.navbarContainer}>
-        <a href="/">
+    <nav className={clsx({ navbarRoot: true, scrolled })}>
+      <div className="navbarContainer">
+        <Link to="/">
           <img src="/favicon.ico" />
-        </a>
-        <div className={style.navLinks}>
+        </Link>
+        <div className="navLinks">
           {NAV_LINKS.map(link => (
-            <a key={link.name} href={link.href} className={style.navLink}>
-              {link.name}
-            </a>
+            <Link key={link.name} to={link.href} className={clsx({ navLink: true, active: location.pathname === link.href })}>
+              <Trans i18nKey={`navbar.${link.name}`} />
+            </Link>
           ))}
+          <ThemeToggle />
         </div>
       </div>
     </nav>
