@@ -7,7 +7,7 @@
     {
       "command": "pnpm start",
       "cwd": "${workspaceFolder}",
-      "name": "Start Vite",
+      "name": "Start Project",
       "request": "launch",
       "type": "node-terminal"
     },

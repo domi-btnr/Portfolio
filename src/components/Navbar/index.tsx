@@ -28,7 +28,7 @@ export default function Navbar() {
     <nav className={clsx({ navbarRoot: true, scrolled })}>
       <div className="navbarContainer">
         <Link to="/">
-          <img src="/favicon.ico" />
+          <img src="/favicon.ico" alt="Avatar" />
         </Link>
         <div className="navLinks">
           {NAV_LINKS.map(link => (

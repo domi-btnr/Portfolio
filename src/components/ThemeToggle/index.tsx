@@ -9,7 +9,7 @@ export default function ThemeToggle() {
   const Icon = activeTheme === "light" ? Sun : Moon;
 
   return (
-    <button className="themeToggleButton" onClick={() => setActiveTheme(activeTheme === "light" ? "dark" : "light")}>
+    <button className="themeToggleButton" onClick={() => setActiveTheme(activeTheme === "light" ? "dark" : "light")} aria-label="Toggle Theme">
       <Icon size={20} />
     </button>
   );

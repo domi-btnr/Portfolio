@@ -2,9 +2,19 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Start Vite",
+      "label": "Start Project",
       "command": "pnpm",
       "args": ["start"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Build & Preview",
+      "type": "shell",
+      "command": "pnpm build && pnpm preview",
       "options": {
         "cwd": "${workspaceFolder}"
       },

@@ -17,9 +17,7 @@ export default {
       "@pages": path.resolve(__dirname, "src/pages"),
     },
   },
-  plugins: [
-    react(),
-  ],
+  plugins: [react()],
   build: {
     sourcemap: true,
   },
@@ -29,7 +27,8 @@ export default {
     host: "0.0.0.0",
   },
   preview: {
-    open: false,
+    open: true,
     port: 3000,
+    host: "0.0.0.0",
   },
 };
