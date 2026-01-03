@@ -1,8 +1,4 @@
-import React, { createContext, FC, useContext, useEffect } from "react";
-
-interface Props {
-  children: React.ReactNode;
-}
+import React, { createContext, useContext, useEffect } from "react";
 
 type Themes = "light" | "dark";
 
@@ -23,7 +19,7 @@ export default function useTheme() {
   return useContext(ThemeProviderContext);
 }
 
-export const ThemeProvider: FC<Props> = ({ children }) => {
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [activeTheme, setActiveTheme] = React.useState<Themes>(() => {
     return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   });
@@ -42,4 +38,4 @@ export const ThemeProvider: FC<Props> = ({ children }) => {
       {children}
     </ThemeProviderContext.Provider>
   );
-};
+}

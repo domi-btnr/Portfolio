@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import { Trans } from "react-i18next";
 import { Link, useLocation } from "react-router";
 
-const NAV_LINKS = [
+// eslint-disable-next-line react-refresh/only-export-components
+export const NAV_LINKS = [
   { name: "home", href: "/" },
   { name: "about", href: "/about" },
   { name: "projects", href: "/projects" },
@@ -33,7 +34,7 @@ export default function Navbar() {
         <div className="navLinks">
           {NAV_LINKS.map(link => (
             <Link key={link.name} to={link.href} className={clsx({ navLink: true, active: location.pathname === link.href })}>
-              <Trans i18nKey={`navbar.${link.name}`} />
+              <Trans i18nKey={`navigation.${link.name}`} />
             </Link>
           ))}
           <ThemeToggle />
