@@ -7,8 +7,8 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  color: var(--label-active);
-  transition: color 0.2s ease-in-out;
+  color: var(--text-primary);
+  transition: color 300ms ease;
   &:hover {
     color: var(--accent);
   }

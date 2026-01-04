@@ -9,8 +9,8 @@
   border-bottom: 1px solid transparent;
   transition: background-color 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease;
   &.scrolled {
-    backdrop-filter: blur(8px);
-    background-color: color-mix(in oklch, var(--background) 5%, transparent);
+    backdrop-filter: blur(12px);
+    background-color: color-mix(in oklch, var(--background) 15%, transparent);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 }
@@ -40,7 +40,7 @@
     background-color: transparent;
     padding: 0.35rem 0.5rem;
     border-radius: 8px;
-    transition: all 150ms ease-in-out;
+    transition: color 300ms ease, background-color 300ms ease;
     &:hover {
       color: var(--accent);
     }
