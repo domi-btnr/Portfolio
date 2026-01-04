@@ -1,6 +1,4 @@
-.footer {
-  bottom: 0;
-  position: absolute;
+footer {
   width: 100%;
   background-color: var(--background);
   border-top: 1px solid color-mix(in oklch, var(--text-primary) 15%, transparent);

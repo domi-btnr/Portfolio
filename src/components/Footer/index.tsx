@@ -9,7 +9,7 @@ import { Link } from "react-router";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer>
       <div className="footerContainer">
         <div className="footerGrid">
           <div className="footerSection">
