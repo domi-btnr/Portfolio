@@ -13,6 +13,18 @@ const translations: ResourceLanguage = {
     social: "Social",
     builtWith: "Built with",
   },
+
+  home: {
+    hero: {
+      title: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+      subtitle: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
+      viewProjects: "View Projects",
+    },
+    techStack: {
+      title: "Technologies I use",
+      subtitle: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
+    },
+  },
 };
 
 export default translations;
