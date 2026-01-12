@@ -15,6 +15,7 @@ export default {
       "@constants": path.resolve(__dirname, "src/constants/index"),
       "@contexts": path.resolve(__dirname, "src/contexts"),
       "@pages": path.resolve(__dirname, "src/pages"),
+      "@utils": path.resolve(__dirname, "src/utils"),
     },
   },
   plugins: [react()],

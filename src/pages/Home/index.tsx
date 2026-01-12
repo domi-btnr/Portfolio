@@ -1,7 +1,7 @@
 import "./style.css";
 
 import { ArrowRight } from "lucide-react";
-import { Trans } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
 const techStack = [
@@ -22,6 +22,8 @@ const techStack = [
 ];
 
 export default function HomePage() {
+  useTranslation();
+
   return (
     <main className="homePage">
       <section>
@@ -45,8 +47,8 @@ export default function HomePage() {
         </p>
         <div className="techStackCarousel">
           <div className="techStackTrack">
-            {[...techStack, ...techStack].map(tech => (
-              <div key={tech.name} className="techStackCard">
+            {[...techStack, ...techStack].map((tech, i) => (
+              <div key={tech.name + i} className="techStackCard">
                 <img src={tech.imgSrc} alt={tech.name} draggable={false} />
                 <span>{tech.name}</span>
               </div>

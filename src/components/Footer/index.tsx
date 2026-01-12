@@ -4,10 +4,12 @@ import { NAV_LINKS } from "@components/Navbar";
 import { faDiscord, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Mail } from "lucide-react";
-import { Trans } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { Link } from "react-router";
 
 export default function Footer() {
+  useTranslation();
+
   return (
     <footer>
       <div className="footerContainer">
@@ -15,12 +17,12 @@ export default function Footer() {
           <div className="footerSection">
             <h3 className="footerTitle">Dominik Büttner</h3>
             <p className="footerText">
-              <Trans i18nKey={"footer.description"} />
+              <Trans i18nKey="footer.description" />
             </p>
           </div>
           <div className="footerSection">
             <h4 className="footerHeading">
-              <Trans i18nKey={"footer.navigation"} />
+              <Trans i18nKey="footer.navigation" />
             </h4>
             <nav className="footerNav">
               {NAV_LINKS.map(link => (
@@ -32,7 +34,7 @@ export default function Footer() {
           </div>
           <div className="footerSection">
             <h4 className="footerHeading">
-              <Trans i18nKey={"footer.social"} />
+              <Trans i18nKey="footer.social" />
             </h4>
             <div className="footerSocial">
               <a href="https://github.com/domi-btnr" target="_blank" rel="noreferrer">
@@ -63,9 +65,11 @@ export default function Footer() {
           </div>
         </div>
         <div className="footerBottom">
-          <p>&copy; {new Date().getFullYear()} Dominik Büttner. All rights reserved.</p>
           <p>
-            <Trans i18nKey={"footer.builtWith"} /> <span>Vite</span>, <span>React</span> & <span>TypeScript</span>
+            &copy; {new Date().getFullYear()} <Trans i18nKey="footer.copyright" />
+          </p>
+          <p>
+            <Trans i18nKey="footer.builtWith" /> <span>Vite</span>, <span>React</span> & <span>TypeScript</span>
           </p>
         </div>
       </div>
