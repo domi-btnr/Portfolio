@@ -1,0 +1,158 @@
+html[data-theme="dark"] .repositoryCard {
+  box-shadow: none;
+  border: 1px solid color-mix(in oklch, var(--text-primary) 15%, transparent);
+  transition: border-color 300ms ease, transform 300ms ease;
+
+  &:hover {
+    border-color: var(--accent);
+    box-shadow: none;
+  }
+}
+
+.repositoryCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: var(--background);
+  box-shadow: 0 2px 6px color-mix(in oklch, var(--text-primary) 10%, transparent), 0 8px 24px color-mix(in oklch, var(--text-primary) 5%, transparent);
+  transition: box-shadow 300ms ease, transform 300ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px color-mix(in oklch, var(--accent) 25%, transparent), 0 12px 32px color-mix(in oklch, var(--accent) 30%, transparent);
+  }
+
+  .repositoryBadge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+  }
+
+  .repositoryHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .repositoryTitle {
+      display: inline-flex;
+      align-items: center;
+      margin: 0;
+      font-size: 1.125rem;
+      font-weight: 600;
+
+      a {
+        display: inline-flex;
+        padding: 0.25rem;
+        border-radius: 8px;
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: background-color 300ms ease;
+
+        &:hover {
+          background-color: color-mix(in oklch, var(--text-primary) 5%, transparent);
+        }
+      }
+
+      .repositoryOwner {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        .repositoryOwnerAvatar {
+          width: 24px;
+          height: 24px;
+          object-fit: cover;
+        }
+      }
+
+      .repositoryTitleDivider {
+        margin: 0 0.1rem;
+        color: var(--text-muted);
+      }
+
+      .repositoryArchived {
+        margin-left: 0.5rem;
+        color: orange;
+        background-color: color-mix(in oklch, orange 10%, transparent);
+        border: 1px solid color-mix(in oklch, orange 50%, transparent);
+      }
+    }
+
+    .repositoryStats {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        color: var(--text-muted);
+        text-decoration: none;
+        gap: 0.25rem;
+
+        &:hover {
+          color: var(--accent);
+        }
+      }
+    }
+  }
+
+  .repositoryDescription {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    overflow: hidden;
+  }
+
+  .repositoryTopics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+
+    .repositoryTopic {
+      color: var(--accent);
+      background-color: color-mix(in oklch, var(--accent) 10%, transparent);
+      border: 1px solid color-mix(in oklch, var(--accent) 50%, transparent);
+    }
+
+    .repositoryTopicMore {
+      border-style: dashed;
+    }
+  }
+
+  .repositoryFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    gap: 1rem;
+
+    padding-top: 1rem;
+    border-top: 1px solid color-mix(in oklch, var(--text-primary) 15%, transparent);
+
+    .repositoryLanguage {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+
+      .repositoryCardLanguageDot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--accent);
+      }
+    }
+
+    .repositoryDate {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+  }
+}

@@ -29,6 +29,15 @@ const translations: ResourceLanguage = {
       subtitle: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
     },
   },
+  projects: {
+    title: "Projects",
+    subtitle: "A collection of my open-source personal projects from GitHub",
+  },
+  repositoryCard: {
+    archived: "Archived",
+    noDescription: "No description available",
+    unknownLanguage: "Unknown Language",
+  },
 };
 
 export default translations;

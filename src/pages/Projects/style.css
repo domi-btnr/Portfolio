@@ -1,0 +1,34 @@
+.projectsPage {
+  margin: 0;
+  padding-top: 128px;
+  padding-bottom: 96px;
+
+  .containerWrapper {
+    margin: 0 56px;
+    padding: 0 32px;
+  }
+
+  .heroWrapper {
+    margin-bottom: 64px;
+
+    .heroTitle {
+      margin-top: 0;
+      margin-bottom: 24px;
+      line-height: 48px;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .heroSubtitle {
+      margin: 0;
+      font-size: 20px;
+      color: var(--text-muted);
+    }
+  }
+
+  .projectsWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(485px, 1fr));
+    gap: 16px;
+  }
+}

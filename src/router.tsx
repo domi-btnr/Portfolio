@@ -1,3 +1,4 @@
+import TanstackQueryProvider from "@contexts/TanstackQueryProvider";
 import { ThemeProvider } from "@contexts/ThemeProvider";
 import { lazy } from "react";
 import { createBrowserRouter, Outlet } from "react-router";
@@ -12,9 +13,11 @@ const router = createBrowserRouter([
   {
     element: (
       <ThemeProvider>
-        <PageWrapper>
-          <Outlet />
-        </PageWrapper>
+        <TanstackQueryProvider>
+          <PageWrapper>
+            <Outlet />
+          </PageWrapper>
+        </TanstackQueryProvider>
       </ThemeProvider>
     ),
     children: [
