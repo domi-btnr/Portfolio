@@ -23,7 +23,6 @@ footer {
     .footerTitle {
       font-size: 1.1rem;
       font-weight: 600;
-      color: var(--text-primary);
     }
 
     .footerHeading {
@@ -31,7 +30,6 @@ footer {
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      color: var(--text-primary);
     }
 
     .footerText {

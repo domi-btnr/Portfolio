@@ -49,7 +49,7 @@ export default function HomePage() {
           <div className="techStackTrack">
             {[...techStack, ...techStack].map((tech, i) => (
               <div key={tech.name + i} className="techStackCard">
-                <img src={tech.imgSrc} alt={tech.name} draggable={false} />
+                <img src={tech.imgSrc} alt={tech.name} draggable={false} loading="lazy" />
                 <span>{tech.name}</span>
               </div>
             ))}
