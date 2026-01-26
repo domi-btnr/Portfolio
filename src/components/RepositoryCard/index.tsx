@@ -2,6 +2,7 @@ import "./style.css";
 
 import { MAX_TOPICS } from "@constants";
 import { RestEndpointMethodTypes } from "@octokit/rest";
+import { useQuery } from "@tanstack/react-query";
 import { Calendar, GitFork, Star } from "lucide-react";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -21,6 +22,18 @@ function formatDate(dateString: string) {
 export default function RepositoryCard(repository: GitHubRepositoryType) {
   useTranslation();
 
+  const languageColors = useQuery({
+    queryKey: ["languageColors"],
+    queryFn: async () => {
+      const response = await fetch("/languageColors.json");
+      const data = await response.json();
+      return data;
+    },
+    staleTime: Infinity,
+  });
+
+  const languageColor = repository.language && languageColors.data?.[repository.language]?.color;
+
   return (
     <div className="repositoryCard">
       <div className="repositoryHeader">
@@ -31,7 +44,7 @@ export default function RepositoryCard(repository: GitHubRepositoryType) {
                 src={repository.owner.avatar_url}
                 alt={`${repository.owner.login} avatar`}
                 className="repositoryOwnerAvatar"
-                style={{ borderRadius: repository.owner.type === "User" ? "50%" : "25%" }}
+                style={{ borderRadius: repository.owner.type === "User" ? "50%" : "0.375rem" }}
                 draggable={false}
                 loading="lazy"
               />
@@ -74,8 +87,13 @@ export default function RepositoryCard(repository: GitHubRepositoryType) {
       )}
       <div className="repositoryFooter">
         <div className="repositoryLanguage">
-          {/* TODO: Get the correct language color */}
-          <span className="repositoryCardLanguageDot" />
+          <span
+            className="repositoryCardLanguageDot"
+            style={{
+              backgroundColor: languageColor,
+              borderColor: languageColor ? "transparent" : "",
+            }}
+          />
           {repository.language ?? <Trans i18nKey="repositoryCard.unknownLanguage" />}
         </div>
         <span className="repositoryDate">
