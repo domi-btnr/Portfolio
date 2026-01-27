@@ -13,20 +13,20 @@ const translations: ResourceLanguage = {
   },
   footer: {
     copyright: "Dominik Büttner. All rights reserved.",
-    description: "I'm Dominik, a Full-Stack Developer",
+    description: "Full-Stack Developer from Germany, learned through practice, experiments and curiosity",
     navigation: "Navigation",
     social: "Social",
     builtWith: "Built with",
   },
   home: {
     hero: {
-      title: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-      subtitle: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
+      title: "Hi, I'm Dominik 👋🏼 <br /> Passionate Full-Stack Developer",
+      subtitle: "I'm a self-taught Full-Stack Developer from Germany who learned by experimenting, breaking things, and trying to build them better",
       viewProjects: "View Projects",
     },
     techStack: {
       title: "Technologies I use",
-      subtitle: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
+      subtitle: "A selection of technologies I use in my day-to-day work and personal projects",
     },
   },
   projects: {

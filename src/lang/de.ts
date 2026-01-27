@@ -13,20 +13,21 @@ const translations: ResourceLanguage = {
   },
   footer: {
     copyright: "Dominik Büttner. Alle Rechte vorbehalten.",
-    description: "Ich bin Dominik, ein Full-Stack Developer",
+    description: "Full-Stack Entwickler aus Deutschland, gelernt durch Praxis, Experimente und Neugier",
     navigation: "Navigation",
     social: "Soziales",
     builtWith: "Gebaut mit",
   },
   home: {
     hero: {
-      title: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-      subtitle: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
+      title: "Hi, Ich bin Dominik 👋🏼 <br /> leidenschaftlicher Full-Stack Entwickler",
+      subtitle:
+        "Ich bin ein Full-Stack Entwickler aus Deutschland, der durch experimentieren, Dinge kaputt machen und dem Versuch, sie besser zu machen, gelernt hat",
       viewProjects: "Projekte ansehen",
     },
     techStack: {
       title: "Technologien die ich verwende",
-      subtitle: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.",
+      subtitle: "Eine Auswahl von Technologien, die ich in meiner täglichen Arbeit und in persönlichen Projekten verwende",
     },
   },
   projects: {

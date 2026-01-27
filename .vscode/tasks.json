@@ -3,8 +3,8 @@
   "tasks": [
     {
       "label": "Start Project",
-      "command": "pnpm",
-      "args": ["start"],
+      "type": "shell",
+      "command": "pnpm start",
       "options": {
         "cwd": "${workspaceFolder}"
       },
@@ -15,6 +15,16 @@
       "label": "Build & Preview",
       "type": "shell",
       "command": "pnpm build && pnpm preview",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Update GitHub Language Colors",
+      "type": "shell",
+      "command": "pnpm update-colors",
       "options": {
         "cwd": "${workspaceFolder}"
       },

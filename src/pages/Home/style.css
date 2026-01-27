@@ -1,7 +1,9 @@
 html[data-theme="dark"] .techStackCard {
   box-shadow: none;
   border: 1px solid color-mix(in oklch, var(--text-primary) 15%, transparent);
-  transition: border-color 300ms ease, transform 300ms ease;
+  transition:
+    border-color 300ms ease,
+    transform 300ms ease;
 
   &:hover {
     border-color: var(--accent);
@@ -20,7 +22,7 @@ html[data-theme="dark"] .techStackCard {
   }
 
   .heroTitle {
-    max-width: 980px;
+    max-width: 70%;
     margin-top: 0;
     margin-bottom: 24px;
     font-weight: 700;
@@ -35,7 +37,7 @@ html[data-theme="dark"] .techStackCard {
   }
 
   .heroSubtitle {
-    width: 70%;
+    width: 65%;
     margin-top: 0;
     margin-bottom: 32px;
     font-size: 24px;
@@ -47,20 +49,24 @@ html[data-theme="dark"] .techStackCard {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    height: 2.5rem;
+    height: 3rem;
     padding: 0 1.5rem;
     border-radius: 0.375rem;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     text-decoration: none;
     background-color: var(--accent);
     color: var(--text-primary);
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    transition: background-color 300ms ease, box-shadow 300ms ease;
+    transition:
+      background-color 300ms ease,
+      box-shadow 300ms ease;
 
     &:hover {
       background-color: color-mix(in oklch, var(--accent) 90%, transparent);
-      box-shadow: 0 4px 12px color-mix(in oklch, var(--accent) 25%, transparent), 0 12px 32px color-mix(in oklch, var(--accent) 30%, transparent);
+      box-shadow:
+        0 4px 12px color-mix(in oklch, var(--accent) 25%, transparent),
+        0 12px 32px color-mix(in oklch, var(--accent) 30%, transparent);
     }
   }
 
@@ -115,12 +121,18 @@ html[data-theme="dark"] .techStackCard {
     gap: 0.75rem;
     border-radius: 12px;
     background-color: var(--background);
-    box-shadow: 0 2px 6px color-mix(in oklch, var(--text-primary) 10%, transparent), 0 8px 24px color-mix(in oklch, var(--text-primary) 5%, transparent);
-    transition: box-shadow 300ms ease, transform 300ms ease;
+    box-shadow:
+      0 2px 6px color-mix(in oklch, var(--text-primary) 10%, transparent),
+      0 8px 24px color-mix(in oklch, var(--text-primary) 5%, transparent);
+    transition:
+      box-shadow 300ms ease,
+      transform 300ms ease;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px color-mix(in oklch, var(--accent) 25%, transparent), 0 12px 32px color-mix(in oklch, var(--accent) 30%, transparent);
+      box-shadow:
+        0 4px 12px color-mix(in oklch, var(--accent) 25%, transparent),
+        0 12px 32px color-mix(in oklch, var(--accent) 30%, transparent);
     }
 
     img {
