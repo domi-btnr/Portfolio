@@ -4,6 +4,7 @@ import RepositoryCard from "@components/RepositoryCard";
 import { GH_ORGS, GH_USERNAME, octokit } from "@constants";
 import { useQueries } from "@tanstack/react-query";
 import { CircleAlert, RefreshCw } from "lucide-react";
+import { useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import i18n from "~/lang";
@@ -13,11 +14,7 @@ export default function ProjectsPage() {
 
   const repoQueries = useQueries({
     queries: [
-      {
-        queryKey: ["repositories", GH_USERNAME],
-        queryFn: () => octokit.rest.repos.listForUser({ username: GH_USERNAME }),
-      },
-      ...GH_ORGS.map(org => ({
+      ...[GH_USERNAME, ...GH_ORGS].map(org => ({
         queryKey: ["repositories", org],
         queryFn: () => octokit.rest.repos.listForUser({ username: org }),
       })),
@@ -34,10 +31,23 @@ export default function ProjectsPage() {
   const isAllFailed = repoQueries.every(query => query.isError);
 
   const repositories = repoQueries
-    .flatMap(q => q.data?.data ?? [])
+    .flatMap(query => query.data?.data ?? [])
     .sort((a, b) => {
       return new Date(b.pushed_at ?? b.created_at!).getTime() - new Date(a.pushed_at ?? a.created_at!).getTime();
     });
+
+  useEffect(() => {
+    if (!isAllRateLimited) return;
+
+    const timeoutId = setTimeout(
+      () => {
+        repoQueries.forEach(query => query.refetch());
+      },
+      Math.max(rateLimitReset * 1000 - Date.now(), 0),
+    );
+
+    return () => clearTimeout(timeoutId);
+  }, [isAllRateLimited, rateLimitReset, repoQueries]);
 
   return (
     <main className="projectsPage">
