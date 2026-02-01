@@ -62,11 +62,11 @@ export default function RepositoryCard(repository: GitHubRepositoryType) {
           )}
         </h2>
         <div className="repositoryStats">
-          <a href={repository.stargazers_url} target="_blank" rel="noopener noreferrer">
+          <a href={`${repository.html_url}/stargazers`} target="_blank" rel="noopener noreferrer">
             <Star size={14} />
             {repository.stargazers_count}
           </a>
-          <a href={repository.forks_url} target="_blank" rel="noopener noreferrer">
+          <a href={`${repository.html_url}/forks`} target="_blank" rel="noopener noreferrer">
             <GitFork size={14} />
             {repository.forks_count}
           </a>

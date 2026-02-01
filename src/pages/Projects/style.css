@@ -26,9 +26,64 @@
     }
   }
 
-  .projectsWrapper {
+  .noteSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    gap: 16px;
+
+    svg {
+      width: 128px;
+      height: 128px;
+
+      &.spinning {
+        animation: spin 2s linear infinite;
+      }
+    }
+
+    span {
+      width: 75%;
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+
+  .banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    font-weight: 500;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &.warning {
+      color: orange;
+      background-color: color-mix(in oklch, orange 25%, transparent);
+      border: 2px solid orange;
+    }
+  }
+
+  .projectsList {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(501px, 1fr));
     gap: 16px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

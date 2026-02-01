@@ -33,6 +33,12 @@ const translations: ResourceLanguage = {
   projects: {
     title: "Projekte",
     subtitle: "Eine Kollektion von meinen persönlichen open-source Projekten von GitHub",
+    loadingMessage: "Lade Projekte von GitHub",
+    fullRateLimitedMessage:
+      "Du hast die maximale Anzahl an Anfragen erreicht. Bitte versuche es später erneut. Die Sperre wird um <strong>{{rateLimitReset}}</strong> zurückgesetzt.",
+    someRateLimitedMessage: "Du hast die maximale Anzahl an Anfragen erreicht. Einige Projekte konnten nicht geladen werden.",
+    allFailedMessage: "Es trat ein Fehler beim Laden der Projekte von GitHub auf. Bitte versuche es später erneut.",
+    someFailedMessage: "Es trat ein Fehler beim Laden einiger Projekte von GitHub auf. Einige Projekte konnten nicht geladen werden.",
   },
   repositoryCard: {
     archived: "Archiviert",
