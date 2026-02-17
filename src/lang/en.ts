@@ -20,7 +20,7 @@ const translations: ResourceLanguage = {
   },
   home: {
     hero: {
-      title: "Hi, I'm Dominik 👋🏼 <br /> Passionate Full-Stack Developer",
+      title: "Hi, I'm Dominik 👋🏼 <br /> Full-Stack Developer",
       subtitle: "I'm a self-taught Full-Stack Developer from Germany who learned by experimenting, breaking things, and trying to build them better",
       viewProjects: "View Projects",
     },

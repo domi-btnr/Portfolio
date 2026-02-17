@@ -1,14 +1,7 @@
 html[data-theme="dark"] .techStackCard {
   box-shadow: none;
   border: 1px solid color-mix(in oklch, var(--text-primary) 15%, transparent);
-  transition:
-    border-color 300ms ease,
-    transform 300ms ease;
-
-  &:hover {
-    border-color: var(--accent);
-    box-shadow: none;
-  }
+  background-color: color-mix(in oklch, var(--text-primary) 7.5%, transparent);
 }
 
 .homePage {
@@ -70,87 +63,36 @@ html[data-theme="dark"] .techStackCard {
     }
   }
 
-  .techStackCarousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding-top: 16px;
-    padding-bottom: 32px;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 64px;
-      height: 100%;
-      pointer-events: none;
-      z-index: 10;
-    }
-
-    &::before {
-      left: 0;
-      background: linear-gradient(to right, var(--background) 0%, transparent 100%);
-    }
-
-    &::after {
-      right: 0;
-      background: linear-gradient(to left, var(--background) 0%, transparent 100%);
-    }
-  }
-
-  .techStackTrack {
-    gap: 1rem;
-    display: flex;
-    min-width: max-content;
-    animation: scroll 60s linear infinite;
-
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 100%;
-    }
+  .techStackGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(128px, 0.5fr));
+    gap: 16px;
   }
 
   .techStackCard {
     display: flex;
-    flex-shrink: 0;
+    flex-direction: column;
     align-items: center;
-    min-width: 120px;
-    padding: 0.75rem 1rem;
-    gap: 0.75rem;
+    justify-content: center;
+    text-align: center;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    gap: 12px;
     border-radius: 12px;
     background-color: var(--background);
+    border: 1px solid transparent;
     box-shadow:
       0 2px 6px color-mix(in oklch, var(--text-primary) 10%, transparent),
       0 8px 24px color-mix(in oklch, var(--text-primary) 5%, transparent);
-    transition:
-      box-shadow 300ms ease,
-      transform 300ms ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow:
-        0 4px 12px color-mix(in oklch, var(--accent) 25%, transparent),
-        0 12px 32px color-mix(in oklch, var(--accent) 30%, transparent);
-    }
 
     img {
-      width: 32px;
-      height: 32px;
+      width: 48px;
+      height: 48px;
     }
+
     span {
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 600;
     }
-  }
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
   }
 }

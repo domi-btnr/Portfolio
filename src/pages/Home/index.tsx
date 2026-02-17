@@ -1,5 +1,6 @@
 import "./style.css";
 
+import useTheme from "@contexts/ThemeProvider";
 import { ArrowRight } from "lucide-react";
 import { Trans, useTranslation } from "react-i18next";
 import { Link } from "react-router";
@@ -13,7 +14,13 @@ const techStack = [
   { name: "Git", imgSrc: "/tech-stack/git.svg" },
   { name: "MongoDB", imgSrc: "/tech-stack/mongodb.svg" },
   { name: "Python", imgSrc: "/tech-stack/python.svg" },
-  { name: "Proxmox", imgSrc: "/tech-stack/proxmox.svg" },
+  {
+    name: "Proxmox",
+    imgSrc: {
+      light: "/tech-stack/proxmox-dark.svg",
+      dark: "/tech-stack/proxmox-light.svg",
+    },
+  },
   { name: "Ubiquiti", imgSrc: "/tech-stack/ubiquiti.svg" },
   { name: "Wireguard", imgSrc: "/tech-stack/wireguard.svg" },
   { name: "Java", imgSrc: "/tech-stack/java.svg" },
@@ -23,6 +30,7 @@ const techStack = [
 
 export default function HomePage() {
   useTranslation();
+  const { activeTheme } = useTheme();
 
   return (
     <main className="homePage">
@@ -45,15 +53,13 @@ export default function HomePage() {
         <p className="heroSubtitle">
           <Trans i18nKey="home.techStack.subtitle" />
         </p>
-        <div className="techStackCarousel">
-          <div className="techStackTrack">
-            {[...techStack, ...techStack].map((tech, i) => (
-              <div key={tech.name + i} className="techStackCard">
-                <img src={tech.imgSrc} alt={tech.name} draggable={false} loading="lazy" />
-                <span>{tech.name}</span>
-              </div>
-            ))}
-          </div>
+        <div className="techStackGrid">
+          {techStack.map(tech => (
+            <div key={tech.name} className="techStackCard">
+              <img src={typeof tech.imgSrc === "object" ? tech.imgSrc[activeTheme] : tech.imgSrc} alt={tech.name} draggable={false} loading="lazy" />
+              <span>{tech.name}</span>
+            </div>
+          ))}
         </div>
       </section>
     </main>

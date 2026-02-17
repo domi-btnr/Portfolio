@@ -20,7 +20,7 @@ const translations: ResourceLanguage = {
   },
   home: {
     hero: {
-      title: "Hi, Ich bin Dominik 👋🏼 <br /> leidenschaftlicher Full-Stack Entwickler",
+      title: "Hi, Ich bin Dominik 👋🏼 <br /> Full-Stack Entwickler",
       subtitle:
         "Ich bin ein Full-Stack Entwickler aus Deutschland, der durch experimentieren, Dinge kaputt machen und dem Versuch, sie besser zu machen, gelernt hat",
       viewProjects: "Projekte ansehen",
