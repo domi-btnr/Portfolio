@@ -9,6 +9,7 @@ const techStack = [
   { name: "TypeScript", imgSrc: "/tech-stack/typescript.svg" },
   { name: "JavaScript", imgSrc: "/tech-stack/javascript.svg" },
   { name: "React", imgSrc: "/tech-stack/react.svg" },
+  { name: "SolidJS", imgSrc: "/tech-stack/solidjs.svg" },
   { name: "Vite", imgSrc: "/tech-stack/vite.svg" },
   { name: "Docker", imgSrc: "/tech-stack/docker.svg" },
   { name: "Git", imgSrc: "/tech-stack/git.svg" },
@@ -25,7 +26,6 @@ const techStack = [
   { name: "Wireguard", imgSrc: "/tech-stack/wireguard.svg" },
   { name: "Java", imgSrc: "/tech-stack/java.svg" },
   { name: "Visual Studio Code", imgSrc: "/tech-stack/vscode.svg" },
-  { name: "SolidJS", imgSrc: "/tech-stack/solidjs.svg" },
 ];
 
 export default function HomePage() {

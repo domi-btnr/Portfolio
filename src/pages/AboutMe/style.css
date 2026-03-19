@@ -1,0 +1,36 @@
+.aboutPage {
+  margin: 0;
+  padding-top: 128px;
+
+  section {
+    margin: 0 56px;
+    padding-bottom: 96px;
+    padding-left: 32px;
+    padding-right: 32px;
+    justify-content: center;
+  }
+
+  .heroWrapper {
+    margin-bottom: 32px;
+
+    .heroTitle {
+      margin-top: 0;
+      margin-bottom: 24px;
+      line-height: 48px;
+      font-size: 48px;
+      font-weight: 700;
+    }
+    h1.heroTitle {
+      line-height: 48px;
+      font-size: 48px;
+    }
+    h2.heroTitle {
+      line-height: 36px;
+      font-size: 36px;
+    }
+  }
+  .aboutDescription {
+    margin-top: 0;
+    font-weight: 500;
+  }
+}
