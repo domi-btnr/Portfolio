@@ -7,7 +7,10 @@
   height: 60px;
   background-color: transparent;
   border-bottom: 1px solid transparent;
-  transition: background-color 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease;
+  transition:
+    background-color 300ms ease,
+    backdrop-filter 300ms ease,
+    border-color 300ms ease;
   &.scrolled {
     backdrop-filter: blur(12px);
     background-color: color-mix(in oklch, var(--background) 15%, transparent);
@@ -22,16 +25,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 599px) {
+    justify-content: center;
+    padding-inline: 0.75rem;
+  }
   img {
     height: 32px;
     width: auto;
     display: block;
+    @media (max-width: 599px) {
+      display: none;
+    }
   }
   .navItems,
   .navLinks {
     display: flex;
     align-items: center;
     gap: 1rem;
+    @media (max-width: 599px) {
+      gap: 0.5rem;
+    }
   }
   .navLink {
     font-size: 16px;
@@ -41,7 +54,13 @@
     background-color: transparent;
     padding: 0.35rem 0.5rem;
     border-radius: 8px;
-    transition: color 300ms ease, background-color 300ms ease;
+    transition:
+      color 300ms ease,
+      background-color 300ms ease;
+    @media (max-width: 599px) {
+      font-size: 14px;
+      padding: 0.25rem 0.35rem;
+    }
     &:hover {
       color: var(--accent);
     }

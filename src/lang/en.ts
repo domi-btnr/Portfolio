@@ -35,7 +35,7 @@ const translations: ResourceLanguage = {
       "I'm a full-stack developer with a background in building discord plugins, web apps and developer-focused tools.",
       "I mainly work with React and NestJS at the moment. I care about clean code, maintainability and understanding how things work instead of just using them.",
       "Most of my experience comes from building things on my own, maintaining projects over time and exploring new technologies when I need them.",
-    ].join("<br /><br />"),
+    ].join("<br />"),
     journey: {
       title: "My journey",
       description: [

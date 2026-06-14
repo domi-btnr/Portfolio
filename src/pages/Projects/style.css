@@ -1,11 +1,11 @@
 .projectsPage {
   margin: 0;
-  padding-top: 128px;
-  padding-bottom: 96px;
+  padding-top: clamp(5rem, 8vw + 1rem, 8rem);
+  padding-bottom: clamp(3rem, 6vw + 1rem, 6rem);
 
   .containerWrapper {
-    margin: 0 56px;
-    padding: 0 32px;
+    margin: 0 clamp(0rem, 4vw, 3.5rem);
+    padding: 0 clamp(1rem, 2vw + 0.5rem, 2rem);
   }
 
   .heroWrapper {
@@ -74,7 +74,7 @@
 
   .projectsList {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(501px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(501px, 100%), 1fr));
     gap: 16px;
   }
 }

@@ -40,16 +40,32 @@ html[data-theme="dark"] .repositoryCard {
 
   .repositoryHeader {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 1rem;
 
     .repositoryTitle {
-      display: inline-flex;
+      display: flex;
+      flex: 1;
+      flex-wrap: wrap;
+      min-width: 0;
       align-items: center;
       margin: 0;
+      padding-left: calc(24px + 0.25rem);
       font-size: 1.125rem;
       font-weight: 600;
+
+      @media (max-width: 599px) {
+        padding-left: 0;
+      }
+
+      > a:first-child {
+        margin-left: calc(-24px - 0.25rem);
+
+        @media (max-width: 599px) {
+          margin-left: 0;
+        }
+      }
 
       a {
         display: inline-flex;
@@ -71,11 +87,16 @@ html[data-theme="dark"] .repositoryCard {
         display: inline-flex;
         align-items: center;
         gap: 0.25rem;
+        white-space: nowrap;
 
         .repositoryOwnerAvatar {
           width: 24px;
           height: 24px;
           object-fit: cover;
+
+          @media (max-width: 599px) {
+            display: none;
+          }
         }
       }
 
@@ -85,7 +106,7 @@ html[data-theme="dark"] .repositoryCard {
       }
 
       .repositoryArchived {
-        margin-left: 0.5rem;
+        margin-left: 0.35rem;
         color: orange;
         background-color: color-mix(in oklch, orange 10%, transparent);
         border: 1px solid color-mix(in oklch, orange 50%, transparent);
