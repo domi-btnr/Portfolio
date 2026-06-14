@@ -66,6 +66,11 @@ const translations: ResourceLanguage = {
     noDescription: "Keine Beschreibung verfügbar",
     unknownLanguage: "Unbekannte Sprache",
   },
+  notFound: {
+    title: "Seite nicht gefunden",
+    subtitle: "Hoppla! Die Seite, die du suchst, existiert nicht oder wurde verschoben.",
+    backHome: "Zur Startseite",
+  },
 };
 
 export default translations;

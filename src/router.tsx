@@ -8,6 +8,7 @@ const PageWrapper = lazy(() => import("@pages/PageWrapper"));
 const HomePage = lazy(() => import("@pages/Home"));
 const AboutMePage = lazy(() => import("@pages/AboutMe"));
 const ProjectsPage = lazy(() => import("@pages/Projects"));
+const NotFoundPage = lazy(() => import("@pages/NotFound"));
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { index: true, Component: HomePage },
       { path: "about", Component: AboutMePage },
       { path: "projects", Component: ProjectsPage },
+      { path: "*", Component: NotFoundPage },
     ],
   },
 ]);
