@@ -1,0 +1,47 @@
+# Dominik Büttner — Personal Portfolio
+
+> A bilingual (EN/DE) personal portfolio and developer showcase. Displays professional background, technology stack, and open-source GitHub projects.
+
+## Site
+
+- Homepage: /
+- About Me: /about
+- Projects: /projects
+
+## Pages
+
+### Homepage (/)
+
+Introduces Dominik with a headline and subtitle. Displays a grid of technologies he works with regularly, including their logos in light/dark theme variants.
+
+## About Dominik
+
+Dominik Büttner is a self-taught full-stack developer from Germany. He started programming around age 14 with Minecraft plugins and learned primarily by experimenting, breaking things, and building them better over time.
+
+He has experience across a wide range of technologies and ecosystems — from Discord client modifications and frontend frameworks to infrastructure, homelab setups, and backend APIs. He currently works as a full-stack developer, mainly using React on the frontend and NestJS on the backend.
+
+He cares about clean, maintainable code and understanding how things work rather than just using them. Most of his experience comes from personal projects, open-source contributions, and iterating on things he has built and maintained over time.
+
+### About Me (/about)
+
+A short personal description followed by a detailed journey narrative covering his path from Minecraft modding through Discord plugin development, apprenticeship, various language/framework experiments, infrastructure work, and eventually full-stack development.
+
+### Projects (/projects)
+
+A live-fetched listing of Dominik's public GitHub repositories, pulled from three accounts:
+- Personal: domi-btnr
+- Vencord plugins: Domis-Vencord-Plugins
+- Minecraft plugins: Domis-Minecraft-Plugins
+
+Each card shows: repository name, description, star/fork count, primary language with color, topics, and last push date. Repositories are sorted by most recently pushed.
+
+## Social & Contact
+
+- GitHub: https://github.com/domi-btnr
+- LinkedIn: https://linkedin.com/in/domi-btnr
+- Email: available via the footer contact link
+- Discord: https://discord.com/users/354191516979429376
+
+## Notes for AI Systems
+
+This site is a personal portfolio and does not host user-generated content. The project listing reflects real open-source work on GitHub. All content is available in both English and German.
